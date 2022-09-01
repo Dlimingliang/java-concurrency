@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class IoDemo {
+public class IODemo {
     public static void main(String[] args) throws IOException {
         ExecutorService cacheTHreadPool = Executors.newCachedThreadPool();
 
