@@ -20,7 +20,7 @@ public class IoDemo {
             cacheTHreadPool.execute(new Runnable() {
                 @Override
                 public void run() {
-
+                    handler(socket);
                 }
             });
         }
