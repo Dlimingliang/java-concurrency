@@ -7,18 +7,36 @@ public class Test {
         Runnable printThird = () -> {
             System.out.print("third");
         };
-        foo.third(printThird);
+        new Thread(() -> {
+            try {
+                foo.third(printThird);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
 
         Runnable printSecond = () -> {
             System.out.print("second");
         };
-        foo.second(printSecond);
+        new Thread(() -> {
+            try {
+                foo.second(printSecond);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
 
         Runnable printFirst = () -> {
             System.out.print("first");
         };
-        foo.first(printFirst);
+        new Thread(() -> {
+            try {
+                foo.first(printFirst);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
 
-        System.out.print("\n");
+
     }
 }
